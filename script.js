@@ -1,3 +1,10 @@
+/* Generate Computer Choice
+Prompt for user choice (to lowercase)
+
+*/
+
+
+
 //function to generate computer choice
 function computerPlay () {
     let computerChoice;
@@ -14,4 +21,12 @@ function computerPlay () {
 
 }
 
-computerPlay();
+
+
+function playRound (playerSelection, computerSelection, numberOfPlays) {
+
+
+}
+
+let computerSelection = computerPlay();
+let playerSelection = prompt('Please enter Rock, Paper, or Scissors').toLowerCase();
