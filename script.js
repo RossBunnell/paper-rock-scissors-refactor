@@ -1,12 +1,8 @@
 function computerPlay() {
-
     let options = ['rock', 'paper', 'scissors'];
     computerChoice = Math.floor(Math.random() * 3);
-
     return options[computerChoice];
 };
-
-
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -28,4 +24,5 @@ function game() {
     computerSelection = computerPlay().trim().toLowerCase();
     let result = playRound(playerSelection, computerSelection);
     return result;
+
 }
