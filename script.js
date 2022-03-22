@@ -1,72 +1,71 @@
-const body = document.querySelector('.results');
-const container = document.createElement('div');
-container.classList.add('.result-container')
-body.appendChild(container);
+ const body = document.querySelector('.results');
+ const container = document.createElement('div');
+ container.classList.add('result-container')
+ body.appendChild(container);
 
-function computerPlay() {
-    let options = ['rock', 'paper', 'scissors'];
-    computerChoice = Math.floor(Math.random() * 3);
-    return options[computerChoice];
-};
+ let rock = document.querySelector('#rock');
+ rock.addEventListener('click', function() {
+     return game('rock');
+ }, );
 
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-        return tie(playerSelection, computerSelection);
-    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        return loser(playerSelection, computerSelection);
-    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        return loser(playerSelection, computerSelection);
-    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        return loser(playerSelection, computerSelection)
-    } else {
-        return winner(playerSelection, computerSelection);
-    }
-};
+ let paper = document.querySelector('#paper');
+ paper.addEventListener('click', function() {
+     return game('paper');
+ });
 
-function winner(playerSelection, computerSelection) {
-    const winner = document.querySelector('.result-container');
-    const winningComment = document.createElement('div');
-    winningComment.classList.add('#result');
-    winningComment.innerText = `You picked ${playerSelection}, computer picked ${computerSelection}, you win!`;
-    winner.appendChild(winningComment);
-};
+ let scissors = document.querySelector('#scissors');
+ scissors.addEventListener('click', function() {
+     return game('scissors');
+ });
 
-function loser(playerSelection, computerSelection) {
-    const loser = document.querySelector('.result-container');
-    const losingComment = document.createElement('div');
-    losingComment.classList.add('#result');
-    losingComment.innerText = `You picked ${playerSelection}, computer picked ${computerSelection}, you lose!`;
-    loser.appendChild(losingComment);
-};
+ function game(playerchoice) {
+     let computerSelection = '';
+     let playerSelection = playerchoice
+     computerSelection = computerPlay().trim().toLowerCase();
+     let result = playRound(playerSelection, computerSelection);
+     //console.log(result);
+     return result;
+ }
 
-function tie(playerSelection, computerSelection) {
-    const tie = document.querySelector('.result-container');
-    const tyingComment = document.createElement('div');
-    tyingComment.classList.add('#result');
-    tyingComment.innerText = `You picked ${playerSelection}, computer picked ${computerSelection}, it's a tie!`;
-    tie.appendChild(tyingComment);
-};
+ function computerPlay() {
+     let options = ['rock', 'paper', 'scissors'];
+     computerChoice = Math.floor(Math.random() * 3);
+     return options[computerChoice];
+ };
 
-function game(playerchoice) {
-    let computerSelection = '';
-    let playerSelection = playerchoice
-    computerSelection = computerPlay().trim().toLowerCase();
-    let result = playRound(playerSelection, computerSelection);
-    console.log(result);
-    return result;
+ function playRound(playerSelection, computerSelection) {
+     if (playerSelection === computerSelection) {
+         return tie(playerSelection, computerSelection);
+     } else if (playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'scissors' || playerSelection === 'scissors' && computerSelection === 'rock') {
+         return loser(playerSelection, computerSelection);
+     } else {
+         return winner(playerSelection, computerSelection);
+     }
+ };
 
-}
-let rock = document.querySelector('#rock');
-rock.addEventListener('click', function() {
-    return game('rock');
-});
+ function winner(playerSelection, computerSelection) {
+     const winner = document.querySelector('.result-container');
+     console.log(winner);
+     const winningComment = document.createElement('div');
+     winningComment.classList.add('.result');
+     winningComment.innerText = `You picked ${playerSelection}, computer picked ${computerSelection}, you win!`;
+     winner.appendChild(winningComment);
 
-let paper = document.querySelector('#paper');
-paper.addEventListener('click', function() {
-    return game('paper');
-});
+     winningComment.remove();
+ };
 
-let scissors = document.querySelector('#scissors');
-scissors.addEventListener('click', function() {
-    return game('scissors');
-});
+ function loser(playerSelection, computerSelection) {
+     const loser = document.querySelector('.result-container');
+     const losingComment = document.createElement('div');
+     losingComment.classList.add('.result');
+     losingComment.innerText = `You picked ${playerSelection}, computer picked ${computerSelection}, you lose!`;
+     loser.appendChild(losingComment);
+ };
+
+ function tie(playerSelection, computerSelection) {
+     const tie = document.querySelector('.result-container');
+     const tyingComment = document.createElement('div');
+     tyingComment.classList.add('.result');
+     tyingComment.innerText = `You picked ${playerSelection}, computer picked ${computerSelection}, it's a tie!`;
+     tie.appendChild(tyingComment);
+ };
