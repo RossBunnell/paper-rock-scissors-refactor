@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #F0EFEB;
+    font-family: 'Bubblegum Sans', cursive;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 15px;
+    color: #A5A58D
+}
+
+#button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 50px 20% 10px 20%;
+}
+
+.button {
+    width: 225px;
+    height: 225px;
+    font-size: 150px;
+}
+
+.button:hover {
+    background-color: #B7B7A4;
+    box-shadow: 10px 10px 5px #686763;
+}
+
+#current-game-results {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}

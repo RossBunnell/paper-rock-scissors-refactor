@@ -3,6 +3,7 @@ const playerScore = 0;
 const choices = ["paper", "rock", "scissors"];
 let player;
 let computer;
+
 /* Computer Selection */
 
 const computerChoice = function() {
@@ -33,7 +34,12 @@ scissors.addEventListener("click", function() {
     return game(player, computer);
 });
 
-function game(player, computer) {}
+/* Playing a round */
+
+function game(player, computer) {
+    let resultContainer = document.getElementById('current-game-results');
+    resultContainer.textContent = player + ' ' + computer;
+}
 
 
 

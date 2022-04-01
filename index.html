@@ -6,15 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <button id="rock" class="button">Rock</button>
-    <button id="paper" class="button">Paper</button>
-    <button id="scissors" class="button">Scissors</button>
-    <div class="score">
+    <h1>Paper, Rock, Scissors</h1>
+    <div id="button-container">
+        <button id="rock" class="button">&#129704</button>
+        <button id="paper" class="button">&#128240</button>
+        <button id="scissors" class="button">&#9986;</button>
     </div>
-    <div class="winner-loser-tie"></div>
+    <div id="current-game-results">Choose Rock, Paper, Or Scissors!</div>
+    <div class="score-container">
+        <span id="player">Player: </span><span id="player-score"></span><span id="computer">Computer: </span><span id="computer-score"></span>
+    </div>
+
     <script src="./script.js"></script>
 </body>
 
