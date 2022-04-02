@@ -16,7 +16,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 50px 20% 10px 20%;
+    margin-top: 50px;
 }
 
 .button {
@@ -33,10 +33,23 @@ h1 {
 #current-game-results {
     text-align: center;
     padding-top: 25px;
+    font-size: 2em;
 }
 
 .score-container {
     display: flex;
     justify-content: center;
     padding-top: 25px;
+}
+
+#player-score,
+#player,
+#computer,
+#computer-score {
+    margin: 0px 10px 0px 10px;
+}
+
+#player-score,
+#computer-score {
+    color: #A5A58D;
 }
